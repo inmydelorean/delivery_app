@@ -1,0 +1,7 @@
+<h1>Couriers</h1>
+<% @couriers.each do |courier| %>
+  <p><%= courier.name %>, <%= courier.email %> - <%= link_to "Показати", courier %>, <%= link_to "Редагувати", edit_courier_path(courier) %></p>
+<% end %>
+<div>
+  <%= link_to "Додати нового кур'єра", new_courier_path %>
+</div>

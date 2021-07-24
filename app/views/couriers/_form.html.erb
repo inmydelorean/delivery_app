@@ -1,0 +1,17 @@
+<%= form_with(model: courier) do |form| %>
+
+  <div>
+    <%= form.label :name, "Повне ім'я" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email, "Електронна пошта" %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.submit "Зберегти" %>
+  </div>
+
+<% end %>

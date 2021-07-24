@@ -1,0 +1,9 @@
+<h1>Кур'єр: <%= @courier.name %></h1>
+<h2>Електронна пошта: <%= mail_to(@courier.email) %></h2>
+
+<div>
+  <%= link_to "Змінити дані", edit_courier_path(@courier) %>
+</div>
+<div>
+  <%= link_to "До списку кур'єрів", couriers_path %>
+</div>
