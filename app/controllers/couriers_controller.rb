@@ -2,7 +2,7 @@ class CouriersController < ApplicationController
   before_action :set_courier, only: [:show, :edit, :update]
 
   def index
-    @couriers = Courier.all
+    @couriers = Courier.order(:id)
   end
 
   def show
@@ -17,10 +17,9 @@ class CouriersController < ApplicationController
 
   def create
     @courier = Courier.new(courier_params)
-
     respond_to do |format|
       if @courier.save
-        format.html { redirect_to @courier, notice: "Сторінку кур'єра успішно створено." }
+        format.html { redirect_to @courier, notice: t('courier_added') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -30,9 +29,9 @@ class CouriersController < ApplicationController
   def update
     respond_to do |format|
       if @courier.update(courier_params)
-        format.html { redirect_to @courier, notice: "Сторінку кур'єра успішно оновлено." }
+        format.html { redirect_to @courier, notice: t('courier_edited') }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end

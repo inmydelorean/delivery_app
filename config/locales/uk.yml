@@ -1,0 +1,44 @@
+uk:
+  #views
+  all_couriers: Всі кур'єри
+  packages: відправлення
+  add_new_courier: Додати нового кур'єра
+  show: Показати
+  edit: Змінити дані
+  courier: Кур'єр
+  email: Електронна пошта
+  to_couriers_list: До списку кур'єрів
+  no_packages: Поки що немає відправлень
+  add_new_package: Додати новe відправлення
+  delivered: Доставлене
+  not_delivered: Не доставлене
+  mark_as_delivered: Позначити доставленим
+  delivered?: Відправлення вже доставлене?
+  # controllers
+  courier_added: Сторінку кур'єра створено.
+  courier_edited: Сторінку кур'єра оновлено.
+  package_added: Відправлення додано.
+  package_delivered: Відправлення доставлене.
+  # models & attributes
+  activerecord:
+    models:
+      courier: Кур'єр
+      package: Відправлення
+    attributes:
+      courier:
+        name: Ім'я
+        email: Електронна пошта
+      package:
+        tracking_number: Номер для відстеження
+        delivery_status: Статус доставки
+    errors:
+      errors_title: Щось пішло не так
+      format: "%{attribute} %{message}"
+      messages:
+        blank: не може бути пустим
+  # form helpers
+  helpers:
+    submit:
+      create: Створити
+      submit: Зберегти
+      update: Зберегти

@@ -2,7 +2,7 @@
 
 one:
   tracking_number: MyString
-  delivery_status: false
+  delivery_status: true
   courier: one
 
 two:

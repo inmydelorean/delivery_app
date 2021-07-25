@@ -1,17 +1,28 @@
-<%= form_with(model: courier) do |form| %>
+<%= form_with(model: courier, local: true) do |form| %>
+  <% if @courier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('activerecord.errors.errors_title') %></h2>
 
+      <ul>
+        <% @courier.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="alert-danger text-center" id="alert"><%= alert %></div>
   <div>
-    <%= form.label :name, "Повне ім'я" %>
+    <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :email, "Електронна пошта" %>
+    <%= form.label :email %>
     <%= form.email_field :email %>
   </div>
 
   <div>
-    <%= form.submit "Зберегти" %>
+    <%= form.submit %>
   </div>
 
 <% end %>

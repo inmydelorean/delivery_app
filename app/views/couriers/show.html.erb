@@ -1,9 +1,25 @@
-<h1>Кур'єр: <%= @courier.name %></h1>
-<h2>Електронна пошта: <%= mail_to(@courier.email) %></h2>
+<h1><%= t('courier') %>: <%= @courier.name %></h1>
+<h2><%= t('email') %>: <%= mail_to(@courier.email) %></h2>
 
 <div>
-  <%= link_to "Змінити дані", edit_courier_path(@courier) %>
+  <%= link_to t('edit'), edit_courier_path(@courier) %>
 </div>
 <div>
-  <%= link_to "До списку кур'єрів", couriers_path %>
+  <%= link_to t('to_couriers_list'), couriers_path %>
 </div>
+
+<h2><%= t('packages').capitalize %></h2>
+<% if @courier.packages.count > 0 %>
+  <% @courier.packages.order(:id).each do |package| %>
+    <p>
+      <%= package.tracking_number %>,
+      <%= package.delivery_status == true ? t('delivered') : t('not_delivered') %>
+      <% if package.delivery_status == false %>
+        <%= link_to t('mark_as_delivered'), courier_package_path(@courier, package), method: :patch, data: { confirm: t('delivered?') } %></p>
+    <% end %>
+  <% end %>
+  <% else %>
+    <%= t('no_packages') %>
+<% end %>
+<h2><%= t('add_new_package') %></h2>
+<%= render "packages/form", courier: @courier, package: @courier.packages.build %>

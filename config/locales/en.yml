@@ -30,4 +30,23 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  #views
+  all_couriers: All couriers
+  packages: Packages
+  add_new_courier: Add new courier
+  show: Show
+  edit: Edit
+  courier: Courier
+  email: Email
+  to_couriers_list: To couriers list
+  no_packages: No packages yet
+  add_new_package: Add new package
+  delivered: Delivered
+  not_delivered: Not delivered
+  mark_as_delivered: Mark as delivered
+  delivered?: The package has been delivered?
+  # controllers
+  courier_added: Courier page has is created.
+  courier_edited: Courier page has is edited.
+  package_added: Package is added.
+  package_delivered: Package is delivered.
