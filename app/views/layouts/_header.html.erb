@@ -1,0 +1,15 @@
+<header>
+  <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <%= link_to "DeliveryApp", root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
+
+
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      <%= link_to t('to_couriers_list'), couriers_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+      <% if I18n.locale == :uk %>
+        <%= link_to "In English", { :locale => 'en' }, class: "me-3 py-2 text-dark text-decoration-none" %>
+      <% else %>
+        <%= link_to "Українською", { :locale => 'uk' }, class: "me-3 py-2 text-dark text-decoration-none" %>
+      <% end %>
+    </nav>
+  </div>
+</header>

@@ -1,7 +1,8 @@
 uk:
   #views
   all_couriers: Всі кур'єри
-  packages: відправлення
+  packages4-: відправлення
+  packages5+: відправлень
   add_new_courier: Додати нового кур'єра
   show: Показати
   edit: Змінити дані

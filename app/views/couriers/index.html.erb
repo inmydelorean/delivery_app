@@ -1,12 +1,24 @@
-<h1><%= t('all_couriers') %></h1>
-<% @couriers.each do |courier| %>
-  <p>
-    <%= courier.name %>,
-    <%= courier.email %>,
-    <%= courier.packages.count.to_s + " " %>
-    - <%= link_to t('show'), courier %>, <%= link_to t('edit'), edit_courier_path(courier) %>
-  </p>
-<% end %>
-<div>
-  <%= link_to t('add_new_courier'), new_courier_path %>
-</div>
+<main>
+  <div class="row g-5">
+    <div class="col-12">
+      <h1><%= t('all_couriers') %></h1>
+      <ul class="icon-list">
+        <% @couriers.each do |courier| %>
+          <li>
+            <%= courier.name %>,
+            <%= courier.email %>,
+            <% if courier.packages.count == 0 %>
+              <%= t('no_packages') %>
+            <% elsif courier.packages.count < 5 %>
+              <%= courier.packages.count.to_s + " " + t('packages4-') %>
+            <% elsif courier.packages.count > 4 %>
+              <%= courier.packages.count.to_s + " " + t('packages5+') %>
+            <% end %>
+            - <%= link_to t('show'), courier %>, <%= link_to t('edit'), edit_courier_path(courier) %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to t('add_new_courier'), new_courier_path, class: "btn btn-primary px-4" %>
+    </div>
+  </div>
+</main>

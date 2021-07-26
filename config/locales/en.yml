@@ -32,7 +32,8 @@
 en:
   #views
   all_couriers: All couriers
-  packages: Packages
+  packages4-: packages
+  packages5+: packages
   add_new_courier: Add new courier
   show: Show
   edit: Edit
@@ -46,7 +47,7 @@ en:
   mark_as_delivered: Mark as delivered
   delivered?: The package has been delivered?
   # controllers
-  courier_added: Courier page has is created.
-  courier_edited: Courier page has is edited.
+  courier_added: Courier page is created.
+  courier_edited: Courier page is edited.
   package_added: Package is added.
   package_delivered: Package is delivered.

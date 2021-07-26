@@ -1,14 +1,12 @@
 <h1><%= t('courier') %>: <%= @courier.name %></h1>
-<h2><%= t('email') %>: <%= mail_to(@courier.email) %></h2>
+<h4><%= t('email') %>: <%= mail_to(@courier.email) %></h4>
 
 <div>
   <%= link_to t('edit'), edit_courier_path(@courier) %>
-</div>
-<div>
   <%= link_to t('to_couriers_list'), couriers_path %>
 </div>
 
-<h2><%= t('packages').capitalize %></h2>
+<h2 class="mt-3"><%= t('packages4-').capitalize %></h2>
 <% if @courier.packages.count > 0 %>
   <% @courier.packages.order(:id).each do |package| %>
     <p>
@@ -21,5 +19,6 @@
   <% else %>
     <%= t('no_packages') %>
 <% end %>
-<h2><%= t('add_new_package') %></h2>
+
+<h2 class="mt-3"><%= t('add_new_package') %></h2>
 <%= render "packages/form", courier: @courier, package: @courier.packages.build %>

@@ -10,19 +10,12 @@
       </ul>
     </div>
   <% end %>
-  <div class="alert-danger text-center" id="alert"><%= alert %></div>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
+    <%= form.label :name, class: "form-label mt-3" %>
+    <%= form.text_field :name, class: "form-control" %>
 
-  <div>
-    <%= form.submit %>
-  </div>
+    <%= form.label :email, class: "form-label mt-3" %>
+    <%= form.email_field :email, class: "form-control" %>
 
+    <%= form.submit class: "btn btn-primary px-4 mt-3" %>
 <% end %>

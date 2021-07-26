@@ -1,24 +1,7 @@
-# README
+DeliveryApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+DeliveryApp is a simple Rails application where you can add couriers and assign them packages to deliver.
 
-Things you may want to cover:
+The project is built using default Rails 6 config, apart from that it uses Postgres as a database, and Bootstrap 5 as a front-end framework. It's available in two languages: Ukrainian and English.'
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a test task for Yalantis Ruby School. 
